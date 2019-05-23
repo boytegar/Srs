@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_main"
+            app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment" android:name="id.project.sistemrumahsakit.ui.LoginFragment"
+              android:label="fragment_login" tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_register" app:destination="@id/registerFragment"
+                app:exitAnim="@anim/slide_to_left_exit"
+                app:enterAnim="@anim/slide_to_left"
+                app:popExitAnim="@anim/slide_to_right"
+                app:popEnterAnim="@anim/slide_to_right_enter"/>
+        <action android:id="@+id/action_loginFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
+    <fragment android:id="@+id/registerFragment" android:name="id.project.sistemrumahsakit.ui.RegisterFragment"
+              android:label="fragment_register" tools:layout="@layout/fragment_register">
+        <action android:id="@+id/action_registerFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
+    <fragment android:id="@+id/mainFragment" android:name="id.project.sistemrumahsakit.ui.MainFragment"
+              android:label="fragment_main" tools:layout="@layout/fragment_main">
+        <action android:id="@+id/action_mainFragment_to_listRuanganFragment" app:destination="@id/listRuanganFragment"/>
+        <action android:id="@+id/action_mainFragment_to_listCokterFragment" app:destination="@id/listCokterFragment"/>
+        <action android:id="@+id/action_mainFragment_to_scanFragment" app:destination="@id/scanFragment"/>
+    </fragment>
+    <fragment android:id="@+id/listRuanganFragment" android:name="id.project.sistemrumahsakit.ui.ListRuanganFragment"
+              android:label="fragment_list_ruangan" tools:layout="@layout/fragment_list_ruangan"/>
+    <fragment android:id="@+id/listCokterFragment" android:name="id.project.sistemrumahsakit.ui.ListCokterFragment"
+              android:label="fragment_list_cokter" tools:layout="@layout/fragment_list_cokter"/>
+    <fragment android:id="@+id/scanFragment" android:name="id.project.sistemrumahsakit.ui.ScanFragment"
+              android:label="fragment_scan" tools:layout="@layout/fragment_scan"/>
+</navigation>
